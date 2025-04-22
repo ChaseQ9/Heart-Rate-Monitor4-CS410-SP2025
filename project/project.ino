@@ -1,5 +1,6 @@
 #define HEARTBEAT_PIN 23
 #define MINUTE 60000
+#include <Arduino.h>
 unsigned long lastBeatTime = 0;
 unsigned long startWindow = 0;
 int beatCount = 0;

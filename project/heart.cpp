@@ -1,7 +1,6 @@
 #include "heart.h"
 
-
-Heart::Heart(int u_age, std::string u_name) {
+Heart::Heart(int u_age, String u_name) {
   heart_rate = 0;
   average_heart_rate = 0.0;
   monitor_time = 0;
@@ -13,7 +12,7 @@ Heart::Heart(int u_age, std::string u_name) {
 
 Heart::~Heart() {
   Serial.print("Final Statistics for [");
-  Serial.print(name.c_str()); // Arduino way to convert std::string to print. 
+  Serial.print(name); // Arduino way to convert std::string to print. 
   Serial.print("]: Heart Rate - ");
   Serial.print(heart_rate);
   Serial.print(", Average Heart Rate - ");
@@ -67,7 +66,7 @@ void Heart::measure_for_seconds(int seconds) {
 // Chase Q - Function to wait x amount of seconds, this is useful for measuring a heart rate for a user as 
 // typically we can get a good measure after of analyzing. Typically a minute is good for measuring 
 // 1 minute = 60_000 milli_seconds
-void wait_x_seconds(int milli_seconds) {
+void Heart::wait_x_seconds(int milli_seconds) {
   unsigned int start = millis();
   unsigned int current = 0;
   unsigned int elapsed = 0;
