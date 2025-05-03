@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenges and Issues</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Challenges and Issues</title>
+  <link rel="stylesheet" href="description-style.css" />
 </head>
 <body>
-    <div class="nav-bar">
-        <ul>
-          <li><a href="issues.html"> Issues </a></li>
-          <li><a href="team.html"> Team </a></li>
-          <li><a href=index.html> Monitor </a></li>
-          <li><a href="description.html"> Description</a> </li>
-          <li><a href="future.html"> Future </a></li>
-        </ul>
-    </div>
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <ul>
+      <li><a href="issues.html">Issues</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html">Monitor</a></li>
+      <li><a href="description.html">Description</a></li>
+      <li><a href="future.html">Future</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div id="issue-container">
+    <h1>Challenges and Issues</h1>
+    <p>
+      We encountered various issues when implementing our project, but the biggest one was
+      getting the sensor to read properly. There was not much documentation on the heart rate
+      sensor we used, so we had to figure out how it worked on our own. After many hours of
+      tinkering, we concluded that our sensor might be defective.
+
+      From our understanding, the sensor reads fluctuations in light to detect pulses. However,
+      ours consistently returned a raw analog value of 4095, regardless of lighting conditions.
+      Additionally, we discovered the LED component was not functioning, which left us unsure of
+      what the sensor was even detecting. We tried several test codes and scoured various online
+      forums, many of which had users reporting similar issues. Unfortunately, it appears that we 
+      received a faulty unit as well.
+    </p>
+  </div>
+
+  <!-- Demo Video -->
+  <div style="text-align: center; margin-bottom: 40px;">
+    <video src="issue.mov" controls muted></video>
+  </div>
 </body>
 </html>
