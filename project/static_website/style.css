@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Base styling */
 body {
   margin: 0;
@@ -7,7 +9,9 @@ body {
   display: flex; /* Flexbox for centering */
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  flex-direction: column;
+  z-index: 1000;
 }
 
 /* Container block */
@@ -27,6 +31,8 @@ body {
   margin-bottom: 25px; /* Space between heart and text */
   animation: pulse 1s infinite ease-in-out; 
   text-shadow: 0 0 20px rgba(231, 76, 60, 0.6); /* Glowing effect */
+  position: relative;
+  z-index: 1; /* Ensure heart does not overlap other elements */
 }
 
 /* BPM text */
@@ -67,3 +73,44 @@ body {
   50%  { transform: scale(1.12); }
   100% { transform: scale(1); }
 }
+
+
+.nav-bar {
+  background-color: #a93226;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 10%;
+  z-index: 9999;
+  border-bottom: 2px solid pink;
+}
+
+.nav-bar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.nav-bar li {
+  color: white;
+  font-style: italic;
+  list-style: none;
+  font-size: 2rem;
+  padding: 5%;
+  font-family: "Inter", sans-serif; 
+}
+
+.nav-bar li:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;

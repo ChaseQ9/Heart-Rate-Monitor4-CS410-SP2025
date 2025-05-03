@@ -1,6 +1,5 @@
 #ifndef CLOCK_H
 #define CLOCK_H
-#include <Arduino.h>
 #include "heart.h"
 
 // This is a simple time clock used for scheduling periods of time
@@ -15,8 +14,8 @@ class Clock {
   public:
   Clock();
 
-  void add_time_block(int hour, int minute, int duration);  // Schedule monitoring session
-  void simulate_time_passage(int hours, int minutes);        // testing purposes only
+  void add_time_block(int hour, int minute, int duration);  // Schedule monitoring session                             
+  void simulate_time_passage(int hours, int minutes);        // testing purposes only                                                        
   void set_current_time(int hour, int minute);              // Set internal clock
 
   int get_current_hour();

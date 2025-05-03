@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Heart Rate Display</title>
-  <link rel="stylesheet" href="/static_website/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <div class="nav-bar">
+      <ul>
+        <li><a href="issues.html"> Issues </a></li>
+        <li><a href="team.html"> Team </a></li>
+        <li><a href=index.html> Monitor </a></li>
+        <li><a href="description.html"> Description</a> </li>
+        <li><a href="future.html"> Future </a></li>
+      </ul>
+  </div>
   <div class="container">
     <div class="heart">&#10084;</div>
     <div class="bpm-label">Average BPM</div>
@@ -18,14 +26,14 @@
     </div>
   </div>
 
-  <script src="/static_website/clock.js"></script>
+  <script src="clock.js"></script>
   
   <script>
     // Function to update the date and time every second
     async function updateBPM() {
       try {
         // Fetch the BPM data from the server
-        const response = await fetch('/bpm');
+        const response = await fetch('http://127.0.0.1:5000/bpm');
 
         // Check if the response is ok
         const data = await response.json();
@@ -38,7 +46,7 @@
       }
     }
   
-    setInterval(updateBPM, 1000); // Update every second
+    setInterval(updateBPM, 9000); // Update every 9 seconds
   </script>
   
 </body>
