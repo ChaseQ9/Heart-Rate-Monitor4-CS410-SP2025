@@ -1,0 +1,149 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base styling */
+body {
+  margin: 0;
+  background: linear-gradient(to bottom right, rgb(136, 8, 8), #ffe6e6); /* Gradient background */
+  font-family: Garamond, serif;
+  color: #b03a2e;
+  display: flex; /* Flexbox for centering */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+/* Container block */
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 60px 80px; /* Padding around the content */
+  border-radius: 50px; /* Rounded corners */
+  box-shadow: 0 12px 30px rgba(192, 57, 43, 0.2); /* Shadow effect */
+  border: 8px solid #f5b7b1;
+}
+
+/* Heart icon */
+.heart {
+  font-size: 120px;
+  color: #e74c3c;
+  margin-bottom: 25px; /* Space between heart and text */
+  animation: pulse 1s infinite ease-in-out; 
+  text-shadow: 0 0 20px rgba(231, 76, 60, 0.6); /* Glowing effect */
+  position: relative;
+  z-index: 1; /* Ensure heart does not overlap other elements */
+}
+
+/* BPM text */
+.bpm-label {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #922b21;
+}
+
+.bpm-value {
+  font-size: 54px;
+  font-weight: 700;
+  color: #b71c1c;
+  transition: transform 0.2s ease;
+}
+
+.bpm-value:hover {
+  transform: scale(1.05);
+}
+
+/* Date & Time */
+.datetime {
+  margin-top: 40px;
+  font-size: 18px;
+  color: #a93226;
+}
+
+#time {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+
+.nav-bar {
+  background-color: #a93226;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 10%;
+  z-index: 9999;
+  border-bottom: 2px solid pink;
+}
+
+.nav-bar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.nav-bar li {
+  color: white;
+  font-style: italic;
+  list-style: none;
+  font-size: 2rem;
+  padding: 5%;
+  font-family: "Inter", sans-serif; 
+}
+
+.nav-bar li:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+video {
+    width: 20%;
+    height: 20%;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-top: 0px;
+    color: white;
+    text-align: center;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+
+#desc-container {
+    padding: 5%;
+}
+
+#issue-container {
+    padding-top: 120px; /* push the title down below the fixed nav bar */
+  }
