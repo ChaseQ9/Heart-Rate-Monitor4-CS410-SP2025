@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base styling */
+body {
+  margin: 0;
+  background: linear-gradient(to bottom right, rgb(136, 8, 8), #ffe6e6); /* Gradient background */
+  font-family: Garamond, serif;
+  color: #b03a2e;
+  display: flex; /* Flexbox for centering */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* Container block */
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 60px 80px; /* Padding around the content */
+  border-radius: 50px; /* Rounded corners */
+  box-shadow: 0 12px 30px rgba(192, 57, 43, 0.2); /* Shadow effect */
+  border: 8px solid #f5b7b1;
+  width: 90%;
+  max-width: 1200px;
+}
+
+
+/* Heart icon */
+.heart {
+  font-size: 120px;
+  color: #e74c3c;
+  margin-bottom: 25px; /* Space between heart and text */
+  animation: pulse 1s infinite ease-in-out;
+  text-shadow: 0 0 20px rgba(231, 76, 60, 0.6); /* Glowing effect */
+}
+
+/* BPM text */
+.bpm-label {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #922b21;
+}
+
+.bpm-value {
+  font-size: 54px;
+  font-weight: 700;
+  color: #b71c1c;
+  transition: transform 0.2s ease;
+}
+
+.bpm-value:hover {
+  transform: scale(1.05);
+}
+
+/* Date & Time */
+.datetime {
+  margin-top: 40px;
+  font-size: 18px;
+  color: #a93226;
+}
+
+#time {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.nav-bar {
+  background-color: #a93226;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 80px;
+  border-bottom: 2px solid pink;
+  z-index: 9999;
+}
+
+.nav-bar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.nav-bar li {
+  color: white;
+  font-style: italic;
+  list-style: none;
+  font-size: 2rem;
+  padding: 5%;
+  font-family: "Inter", sans-serif;
+}
+
+.nav-bar li:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+/* Bullet list with heart icons */
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 40px auto;
+    text-align: left;
+    max-width: 800px;
+  }
+  
+  .feature-list li {
+    position: relative;
+    padding-left: 3em;
+    margin-bottom: 30px;
+    font-size: 1.6rem;                /* Bigger text */
+    line-height: 2;
+    color: #922b21;
+    transition: font-size 0.3s ease, color 0.3s ease;
+    text-align: left;
+  }
+  
+  .feature-list li::before {
+    content: "❤️";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1.8em;
+    height: 1.6em;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover grows both heart and text */
+  .feature-list li:hover {
+    font-size: 1.85rem;
+    color: #b71c1c;
+  }
+  
+  .feature-list li:hover::before {
+    transform: scale(1.3);
+  }
+  
+  /* Code images layout and hover zoom */
+  .code-images {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  
+  .code-images img {
+    width: 800px;
+    height: auto; 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .code-images img:hover {
+    transform: scale(1.5);
+    z-index: 10;
+  }
+  
