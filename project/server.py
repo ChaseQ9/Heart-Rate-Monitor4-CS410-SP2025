@@ -19,6 +19,7 @@ def serve_index():
 
 @app.route('/bpm') # Serve the BPM data
 def get_bpm(test=False): 
+    
     test = False
     if (test):
         bpm = random.randint(60, 100)
@@ -39,4 +40,4 @@ def get_bpm(test=False):
     return jsonify({'bpm': bpm})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000, host='localhost')
+    app.run(debug=True, port=5000, host='127.0.0.1')
