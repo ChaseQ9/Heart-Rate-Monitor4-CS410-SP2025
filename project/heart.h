@@ -1,6 +1,6 @@
 #ifndef HEART_H
 #define HEART_H
-#include <Arduino.h> // Arduino standard library
+#include <Arduino.h>
 
 class Heart {
   public:
@@ -12,9 +12,9 @@ class Heart {
     int get_monitor_time();
 
     // Andrew N - Implemented set_monitor_time, set_average_heart_rate, set_heart_rate.
-    void set_monitor_time(int time); // It could be double
+    void set_monitor_time(int time);
     void set_average_heart_rate(double average_rate);
-    void set_heart_rate(int rate); // heart rate must be int, according to hospital
+    void set_heart_rate(int rate);
 
     // Patrick M - Implement measure_for_seconds 
     void measure_for_seconds(int seconds);   // simulates live measurement during recording of heart-rate

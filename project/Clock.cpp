@@ -1,6 +1,7 @@
 #include "Clock.h"
 using namespace std;
 #include <Arduino.h>
+
 /*  Patrick M
     Clock Object initialization.  Creates a new Clock Object, setting
     all values to 0 and all time_block array entries to false.
@@ -102,13 +103,3 @@ void Clock::print_schedule() {
         Serial.println(has_measured[i] ? "Yes" : "No");
     }
 }
-
-
-
-
-
-
-
-
-
-

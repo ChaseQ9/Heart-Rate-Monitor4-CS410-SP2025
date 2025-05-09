@@ -21,6 +21,8 @@ Heart::~Heart() {
   Serial.println(monitor_time);
 }
 
+// Andrew N
+// Getters and Setters
 int Heart::get_heart_rate() {
   return heart_rate;
 }

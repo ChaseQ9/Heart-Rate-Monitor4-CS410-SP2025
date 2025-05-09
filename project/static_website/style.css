@@ -1,3 +1,4 @@
+/* Import Google font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Base styling */
@@ -40,6 +41,7 @@ body {
   color: #922b21;
 }
 
+/* BPM value */
 .bpm-value {
   font-size: 54px;
   font-weight: 700;
@@ -47,6 +49,7 @@ body {
   transition: transform 0.2s ease;
 }
 
+/* Slightly enlarge on hover */
 .bpm-value:hover {
   transform: scale(1.05);
 }
@@ -58,6 +61,7 @@ body {
   color: #a93226;
 }
 
+/* Time */
 #time {
   font-size: 24px;
   font-weight: bold;
@@ -71,6 +75,7 @@ body {
   100% { transform: scale(1); }
 }
 
+/* Navigation bar */
 .nav-bar {
   background-color: #a93226;
   position: fixed;
@@ -80,6 +85,7 @@ body {
   border-bottom: 2px solid pink;
 }
 
+/* Navigation bar container */
 .nav-bar ul {
   display: flex;
   justify-content: space-around;
@@ -88,6 +94,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Navigation bar list items */
 .nav-bar li {
   color: white;
   font-style: italic;
@@ -97,15 +105,19 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Hover effect for nav items */
 .nav-bar li:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
 }
+
+/* Link styles */
 a:visited {
   text-decoration: none;
   color: white;
 }
 
+/* Link styles */
 a:link {
   text-decoration: none;
   color: white;
