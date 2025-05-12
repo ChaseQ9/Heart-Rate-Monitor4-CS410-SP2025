@@ -86,8 +86,10 @@ bool normal_heart_rate(double average_heart_rate) {
   return (average_heart_rate >= 60 && average_heart_rate <= 100); 
 }
 
-// Function to record the average heart rate every hour over a 24-hour cycle.
-// Probably gonna change this to 
+// William M
+// Function to record the average heart rate every hour over a 24-hour cycle 
+// Can be adjusted to store the average heart rate for however long 
+// of a cycle you want
 void storeDailyAvgHeartRates(Heart &heart) {
   // Array to hold 24 heartrate measurements for a 24hr cycle
   double hourlyAverages[24];
