@@ -27,7 +27,7 @@ implementation of our clock files, heart files, and our server.py file which is 
 through the Flask framework.
 
 ## Warning
-Our project was implemented with a broken sensor so when integrating our the source code with your sensor, you will have to adjust the threshhold value
-which determines a singular heart rate depending on how sensitive your sensor is. Check the issue page on our website for more details on how PPG or photo-plethysmography works.
+Our project was implemented with a broken sensor so when integrating our the source code with your sensor, you will have to adjust the threshhold value in
+project.ino which determines a singular heart rate depending on how sensitive your sensor is. Check the issue page on our website for more details on how PPG or photo-plethysmography works.
 
 
