@@ -2,6 +2,12 @@
 #define HEART_H
 #include <Arduino.h>
 
+/*  This is the header description for our heart.h file. This file as well as its .cpp counterpart are used to represent a heart rate 
+* calculated by our project.ino file and our esp32 board. The goal of this file and our .cpp version of this file is to allow
+* a user to know specific facts about their heart and to implement our clock class and files in order to have specific measuring "moments"
+* from our project so that they can keep an eye on the parts of their day they deem to be important enough to measure their heart rates
+*/
+
 class Heart {
   public:
     Heart(int age, String name);
