@@ -26,4 +26,8 @@ and our javascript file we use for our clock on the website as well. Outside of 
 implementation of our clock files, heart files, and our server.py file which is the file that is used to bring the data from the ESP32 to the website 
 through the Flask framework.
 
+## Warning
+Our project was implemented with a broken sensor so when integrating our the source code with your sensor, you will have to adjust the threshhold value
+which determines a singular heart rate depending on how sensitive your sensor is. Check the issue page on our website for more details on how PPG or photo-plethysmography works.
+
 
