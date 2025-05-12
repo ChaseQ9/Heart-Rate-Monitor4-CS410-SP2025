@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Challenges and Issues</title>
-  <link rel="stylesheet" href="issue-style.css" />
+  <link rel="stylesheet" href="issuestyle.css" />
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -28,17 +28,20 @@
       sensor we used, so we had to figure out how it worked on our own. After many hours of
       tinkering, we concluded that our sensor might be defective.
 
-      From our understanding, the sensor reads fluctuations in light to detect pulses. However,
-      ours consistently returned a raw analog value of 4095, regardless of lighting conditions.
-      Additionally, we discovered the LED component was not functioning, which left us unsure of
-      what the sensor was even detecting. We tried several test codes and scoured various online
-      forums, many of which had users reporting similar issues. Unfortunately, it appears that we 
-      received a faulty unit as well.
+      From our understanding, the sensor provided reads heart rate using a technique called photo plethysmography (PPG). Our 
+      sensor implements this with an led placed in front of a light sensor. When a finger is placed between the sensor and the led, the amount of 
+      light received by the sensor will fluctuate due to changes in blood volume. Each fluctuation is interpreted as a singular heart beat. In our 
+      implementation, we took the number of fluctuations in 10,000 millis or 10 seconds divided it by 10 then multiplied it by 60 to get a bpm. 
+      However,our sensor consistently returned a raw analog value of 4095,regardless of lighting conditions. There were no fluctuations no matter 
+      the test conditions we put the sensor in. Additionally, we discovered the LED component was not functioning, which left us unsure of what the 
+      sensor was even detecting. We tried several test codes and scoured various online forums, many of which had users reporting that their sensors 
+      came in broken or with similar issues and unfortunately, it appears that we received a faulty unit as well.
     </p>
   </div>
 
   <!-- Demo Video -->
-    <video src="videos/issue.mp4" controls muted></video>
+  
+    <video src="issue.mp4" controls muted></video>
 
 </body>
 </html>
