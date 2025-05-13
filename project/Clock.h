@@ -1,6 +1,9 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
 #ifndef CLOCK_H
 #define CLOCK_H
-#include "heart.h"
 
 // This is a simple time clock used for scheduling periods of time
 // for monitoring (could work with multiple types of activity)
@@ -20,26 +23,36 @@ class Clock {
 
   int get_current_hour();
   int get_current_minute();
-  
+  void reset_time_block();
   void print_schedule();      // Debugging/Logging
-  
-  // Template: can monitor any object with a measure_for_seconds(int) method
-  template <typename T>
-  void check_and_measure(T &monitorable) {
+
+  /**
+   * check_and_measure: Monitorable Object -> Void
+   * Can begin measurement of any object with a check_and_measure function
+   * @tparam T Templated type of object that can be measured (heartrate, oxygen, pedometer, etc,...)
+   * @param monitorable Object with a check_and_measure function
+   */
+template <typename T>
+void check_and_measure (T &monitorable) {
+    // Perform measurement of object if it hasn't already been tested before reset
+    // at the given scheduled time.
     for (int i = 0; i < schedule_count; i++) {
-      if (!has_measured[i] && schedule[i].startHour == current_hour && 
-                              schedule[i].startMinute == current_minute) {
-        Serial.print("Scheduled measurement triggered at ");
-        Serial.print(current_hour);
-        Serial.print(":");
-        Serial.println(current_minute);
-        // Call the object's measure_for_seconds function
-        monitorable.measure_for_seconds(schedule[i].duration);
-        // Time block has been tested
-        has_measured[i] = true;
-      }
+        if (!has_measured[i] &&
+            schedule[i].startHour == current_hour &&
+            schedule[i].startMinute == current_minute) {
+            
+            cout << "Scheduled measurement triggered at "
+                 << setw(2) << setfill('0') << current_hour << ":"
+                 << setw(2) << setfill('0') << current_minute << endl;
+            
+            // Call the object's measure_for_seconds function
+            monitorable.measure_for_seconds(schedule[i].duration);
+
+            // Time block has been tested
+            has_measured[i] = true;
+        }
     }
-  }
+}
 
   private:
     TimeBlock schedule[10];   // Max number of scheduled time blocks
