@@ -1,40 +1,45 @@
-#define HEARTBEAT_PIN 23
-#define MINUTE 60000
-#include <Arduino.h>
-unsigned long lastBeatTime = 0;
-unsigned long startWindow = 0;
-int beatCount = 0;
-const int windowSize = 10000; // 10 seconds
+const int pulsePin = 34;  // GPIO34 for analog input, replace with whatever anolog pin you are using with your microboard
+const int buzzerPin = 22;// GPIO22 for the buzzer. Currently unused
+int threshold = 19;      // Threshold for fluctuations to determine a heartbeat, adjust according to your sensor
+unsigned long lastBeatTime = 0; // Time since the last Beat (heartbeat)
+int beatCount = 0; // how many beats we have come across
+unsigned long startTime = 0;
 
-
+// The setup function is run once at the initialization
 void setup() {
-  Serial.begin(115200);
-  pinMode(HEARTBEAT_PIN, INPUT);
-  startWindow = millis();
+  Serial.begin(115200); //baudrate to read serial monitor make sure it matches whatever baudrate your serial monitor is set to
+  delay(2000);
+  startTime = millis(); 
+  pinMode(buzzerPin, OUTPUT);
 }
 
+// The loop function is run continously on the board
 void loop() {
-  static int lastState = LOW;
-  int currentState = digitalRead(HEARTBEAT_PIN);
-  unsigned long now = millis();
+  int analogValue = analogRead(pulsePin);
 
-  if (currentState == HIGH && (now - lastBeatTime > 700)) {
-    Serial.print("now - last beat time = ");
-    Serial.println(now - lastBeatTime);
+  // Detect heart beat (avoid duplicates through time)
+  if (analogValue > threshold && (millis() - lastBeatTime) > 250) {
     beatCount++;
-    lastBeatTime = now;
+    // Serial.println("beat detected");
+    lastBeatTime = millis(); //marks the current time
   }
 
-  if (now - startWindow >= MINUTE) {
-    int bpm = beatCount;
-    Serial.print("Heart Rate (BPM): ");
+  // Every 10 seconds, calculate BPM
+  if (millis() - startTime >= 10000) {
+    // equation we have come across to calculate bpm
+    float bpm = (beatCount / 10.0) * 60.0;
+    
+     if (bpm >= 140) { //if the calculated bpm is greater than or equal to 140 activate buzzer
+       tone(buzzerPin, 10000, 500);
+         delay(1000);
+         noTone(buzzerPin);
+         delay(1000);
+    }
+    
     Serial.println(bpm);
-
-    // Reset for next window
     beatCount = 0;
-    startWindow = now;
-    currentState = LOW;
+    startTime = millis(); //resets everything for the next loop
   }
 
-  // lastState = currentState;
+  delay(10);  // Small delay to reduce noise
 }

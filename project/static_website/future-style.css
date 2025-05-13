@@ -1,3 +1,4 @@
+/* Import Google font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Base styling */
@@ -43,6 +44,7 @@ body {
   color: #922b21;
 }
 
+/* BPM value */
 .bpm-value {
   font-size: 54px;
   font-weight: 700;
@@ -50,6 +52,7 @@ body {
   transition: transform 0.2s ease;
 }
 
+/* Slightly enlarge on hover */
 .bpm-value:hover {
   transform: scale(1.05);
 }
@@ -61,6 +64,7 @@ body {
   color: #a93226;
 }
 
+/* Time */
 #time {
   font-size: 24px;
   font-weight: bold;
@@ -74,16 +78,18 @@ body {
   100% { transform: scale(1); }
 }
 
+/* Navigation bar */
 .nav-bar {
   background-color: #a93226;
-  position: fixed;
+  position: fixed; /* Fixed position */
   top: 0px;
   width: 100%;
   height: 80px;
-  border-bottom: 2px solid pink;
-  z-index: 9999;
+  border-bottom: 2px solid pink; /* Bottom border */
+  z-index: 9999; /* Make sure nav stays on top */
 }
 
+/* Navigation bar container */
 .nav-bar ul {
   display: flex;
   justify-content: space-around;
@@ -92,24 +98,30 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Navigation bar list items */
 .nav-bar li {
   color: white;
-  font-style: italic;
-  list-style: none;
+  font-style: italic; /* Italic text */
+  list-style: none; /* No bullets */
   font-size: 2rem;
-  padding: 5%;
+  padding: 5%; /* Padding for list items */
   font-family: "Inter", sans-serif;
 }
 
+/* Hover effect for navigation items */
 .nav-bar li:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  transition: transform 0.2s ease-in-out; /* Smooth transition */
 }
+
+/* Style for visited links */
 a:visited {
   text-decoration: none;
   color: white;
 }
 
+/* Style for unvisited links */
 a:link {
   text-decoration: none;
   color: white;
@@ -117,63 +129,67 @@ a:link {
 
 /* Bullet list with heart icons */
 .feature-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 40px auto;
-    text-align: left;
-    max-width: 800px;
-  }
+  list-style: none; /* No default bullets */
+  padding-left: 0; /* Remove padding */
+  margin: 40px auto;
+  text-align: left; /* Align text to the left */
+  max-width: 800px;
+}
+
+/* Individual list items */
+.feature-list li {
+  position: relative;
+  padding-left: 3em;
+  margin-bottom: 30px;
+  font-size: 1.6rem;                /* Bigger text */
+  line-height: 2;
+  color: #922b21;
+  transition: font-size 0.3s ease, color 0.3s ease;
+  text-align: left;
+}
+
+/* Heart icon before each list item */
+.feature-list li::before {
+  content: "❤️";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1.8em;
+  height: 1.6em;
+  transition: transform 0.3s ease;
+}
   
-  .feature-list li {
-    position: relative;
-    padding-left: 3em;
-    margin-bottom: 30px;
-    font-size: 1.6rem;                /* Bigger text */
-    line-height: 2;
-    color: #922b21;
-    transition: font-size 0.3s ease, color 0.3s ease;
-    text-align: left;
-  }
+/* Hover grows both heart and text */
+.feature-list li:hover {
+  font-size: 1.85rem;
+  color: #b71c1c;
+}
+
+/* Heart icon grows on hover */
+.feature-list li:hover::before {
+  transform: scale(1.3);
+}
   
-  .feature-list li::before {
-    content: "❤️";
-    position: absolute;
-    left: 0;
-    top: 0.25em;
-    width: 1.8em;
-    height: 1.6em;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Hover grows both heart and text */
-  .feature-list li:hover {
-    font-size: 1.85rem;
-    color: #b71c1c;
-  }
-  
-  .feature-list li:hover::before {
-    transform: scale(1.3);
-  }
-  
-  /* Code images layout and hover zoom */
-  .code-images {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-  }
-  
-  .code-images img {
-    width: 800px;
-    height: auto; 
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  .code-images img:hover {
-    transform: scale(1.5);
-    z-index: 10;
-  }
-  
+/* Code images layout and hover zoom */
+.code-images {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+ 
+/* Individual code images */
+.code-images img {
+  width: 800px;
+  height: auto; 
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for code images */
+.code-images img:hover {
+  transform: scale(1.5);
+  z-index: 10;
+}

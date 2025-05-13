@@ -1,5 +1,6 @@
 /* CSS for the Team Page */
 
+/* Reset some default styles */
 body {
   font-family: Garamond, serif;
 }
@@ -13,6 +14,7 @@ body {
     margin: 0;
   }
   
+  /* Team paragraph */
   #team-page #team p {
     font-size: 28px;
     color: #fff;
@@ -22,12 +24,14 @@ body {
     padding-right: 5%;
   }
   
+  /* Team container */
   #team-page .team-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
   
+  /* Team member */
   #team-page .team-member {
     background-color: #a93226;
     width: 200px;
@@ -37,10 +41,14 @@ body {
     transition: transform 0.2s ease-in-out;
   }
   
+  /* Team member hover effect */
+  /* Scale up the member on hover */
   #team-page .team-member:hover {
     transform: scale(1.2);
   }
   
+  /* Team member image */
+  /* Set the image size and style */
   #team-page .team-member img {
     width: 170px;
     height: 240px;
@@ -49,12 +57,15 @@ body {
     border: 4px solid white;
   }
   
+  /* Team member role */
+  /* Set the font size and color */
   #team-page .team-member h3 {
     font-size: 28px;
     margin-top: 30px;
     color: white;
   }
   
+  /* Footer for the Team page */
   #team-page footer {
     background-color: #a93226;
     color: white;
@@ -65,11 +76,14 @@ body {
     width: 100%;
   }
 
+  /* Team member name */
+  /* Set the font size and color */
   .team-member h2 {
     color: white;
     font-size: 20px;
   }
 
+  /* Team member image */
   .team-member img {
     height: 50%;
   }

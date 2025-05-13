@@ -7,6 +7,8 @@ import string
 
 
 app = Flask(__name__, static_folder='static_website') # Create a Flask app
+# CORS is for Cross-Origin Resource Sharing. We were getting issues related to this because our live server and this program 
+# were running on two different "localhosts". 127.0.0.1 and localhost. 
 CORS(app, supports_credentials=True)
 
 # Serve index.html from /static_website
@@ -19,24 +21,29 @@ def serve_index():
 
 @app.route('/bpm') # Serve the BPM data
 def get_bpm(test=False): 
+    
     test = False
     if (test):
         bpm = random.randint(60, 100)
         return jsonify({'bpm': bpm})
     
+    # Connection to the specific port that the esp32 is on
     ser = serial.Serial('/dev/cu.usbserial-0001', 115200, timeout=1)
     time.sleep(2)
     bpm = 0
-    try:
+    try: 
+        # attempt to try to read the data through the esp32 connection
         line = ser.readline().decode('utf-8', errors='ignore').strip()
         print(line)
+        # we are only interested in the numbers from the esp32 so strip out the ascii characters
         bpm = line.strip(string.ascii_letters)
     except KeyboardInterrupt:
         print("Exiting...")
     finally:
         if ser.is_open:
             ser.close()
+    # return the bpm we calculated in a JSON format 
     return jsonify({'bpm': bpm})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000, host='localhost')
+    app.run(debug=True, port=5000, host='127.0.0.1')

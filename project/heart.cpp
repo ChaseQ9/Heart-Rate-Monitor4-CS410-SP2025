@@ -1,4 +1,14 @@
+#include <iostream>
 #include "heart.h"
+#include <cstdlib>
+
+/*  This is the header description for our heart.cpp file. This file as well as its .h counterpart are used to represent a heart rate 
+* calculated by our project.ino file and our esp32 board. The goal of this file and our .h version of this file is to allow
+* a user to know specific facts about their heart and to implement our clock class and files in order to have specific measuring "moments"
+* from our project so that they can keep an eye on the parts of their day they deem to be important enough to measure their heart rates
+*/
+
+using namespace std;
 
 Heart::Heart(int u_age, String u_name) {
   heart_rate = 0;
@@ -7,20 +17,15 @@ Heart::Heart(int u_age, String u_name) {
   irregular = false;
   name = u_name;
   age = u_age;
-  Serial.println("Heart monitor initialized");
+  cout << "Heart Monitor Initialized" << endl;
 }
 
 Heart::~Heart() {
-  Serial.print("Final Statistics for [");
-  Serial.print(name); // Arduino way to convert std::string to print. 
-  Serial.print("]: Heart Rate - ");
-  Serial.print(heart_rate);
-  Serial.print(", Average Heart Rate - ");
-  Serial.print(average_heart_rate);
-  Serial.print(", Monitored Time - ");
-  Serial.println(monitor_time);
+  cout << "Final Statistics for [" << name << "]: Heart Rate - " << heart_rate << ", Average Heart Rate - " << average_heart_rate << ", Monitored Time - " << monitor_time << endl;
 }
 
+// Andrew N
+// Getters and Setters
 int Heart::get_heart_rate() {
   return heart_rate;
 }
@@ -47,19 +52,16 @@ void Heart::set_heart_rate(int rate) {
 *   until we know the actual sensor logic
 */
 void Heart::measure_for_seconds(int seconds) {
-  Serial.print("Measuring heart rate for ");
-  Serial.print(seconds);
-  Serial.println(" seconds...");
+  cout << "Measuring heart rate for " << seconds << " seconds..." << endl;
   wait_x_seconds(seconds * 1000);
   // Need to edit, just simulation for now...
-  int simulated_rate = random(50, 140);  // Replace random with actual sensor logic later!
+  int simulated_rate = rand(50, 140);  // Replace random with actual sensor logic later!
   set_heart_rate(simulated_rate);
-  Serial.print("Heart rate measured: ");
-  Serial.println(simulated_rate);
+  cout << "Heart rate measured: " << simulated_rate << endl;
   if (normal_heart_rate(average_heart_rate)) {
-    Serial.println ("Your heart-rate is normal!");
+    cout << "Your heart-rate is normal!";
   } else {
-    Serial.println ("Your heart-rate is NOT normal!");
+    cout << "Your heart-rate is NOT normal!";
   }
 }
 
@@ -84,33 +86,28 @@ bool normal_heart_rate(double average_heart_rate) {
   return (average_heart_rate >= 60 && average_heart_rate <= 100); 
 }
 
-// Function to record the average heart rate every hour over a 24-hour cycle.
-// Probably gonna change this to 
+// William M
+// Function to record the average heart rate every hour over a 24-hour cycle 
+// Can be adjusted to store the average heart rate for however long 
+// of a cycle you want
 void storeDailyAvgHeartRates(Heart &heart) {
   // Array to hold 24 heartrate measurements for a 24hr cycle
   double hourlyAverages[24];
   for (int hour = 0; hour < 24; hour++) {
     // Inform the user which hour is being measured.
-    Serial.print("Starting measurement for hour ");
-    Serial.println(hour + 1);
+    cout << "Starting measurement for hour " << hour + 1 << endl;
     // Measure heart rate for one hour
     heart.measure_for_seconds(3600);
     // Retrieve and store the average heart rate from the current measurement.
     hourlyAverages[hour] = heart.get_avg_heart_rate();
     // Log the measured average for this hour.
-    Serial.print("Recorded avg heart rate for hour ");
-    Serial.print(hour + 1);
-    Serial.print(": ");
-    Serial.println(hourlyAverages[hour]);
+    cout << "Recorded avg heart rate for hour " << hour + 1 << ": " << hourlyAverages[hour] << endl;
   }
   
   // Optionally, display the entire day's measurements.
-  Serial.println("Daily average heart rates:");
+  cout << "Daily average heart rates:" << endl;
   for (int i = 0; i < 24; i++) {
-    Serial.print("Hour ");
-    Serial.print(i + 1);
-    Serial.print(": ");
-    Serial.println(hourlyAverages[i]);
+    cout << "Hour " << i + 1 << ": " << hourlyAverages[i] << endl;
   }
 }
 
