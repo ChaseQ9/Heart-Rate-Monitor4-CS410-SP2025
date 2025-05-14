@@ -30,6 +30,8 @@ def get_bpm(test=False):
         return jsonify({'bpm': bpm})
     
     # Connection to the specific port that the esp32 is on
+    # This section (the port) may need to be configured for the users computer
+    # For our usage, we used the below port on a M3 Macbook Pro 
     ser = serial.Serial('/dev/cu.usbserial-0001', 115200, timeout=1)
     time.sleep(2)
     bpm = 0

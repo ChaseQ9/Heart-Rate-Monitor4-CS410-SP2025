@@ -30,4 +30,6 @@ through the Flask framework.
 Our project was implemented with a broken sensor so when integrating our the source code with your sensor, you will have to adjust the threshhold value in
 project.ino which determines a singular heart rate depending on how sensitive your sensor is. Check the issue page on our website for more details on how PPG or photo-plethysmography works.
 
+## Detailed Usage
+For more details regarding our project, please refer to our code-manual.md and user-manual.md.
 
