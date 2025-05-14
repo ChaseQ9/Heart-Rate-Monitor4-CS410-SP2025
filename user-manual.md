@@ -12,18 +12,18 @@ Welcome! This guide will walk you through how to **set up, build, run and use** 
 - Visual Studio Code (Recommended IDE)
 
 ## How to set up
-1. Download the Project
-Download the project files from our GitHub repository (Either clone or download ZIP and extract it locally)
-2. Install Python Dependencies
-Install Flask using pip: "pip install flask"
+1. **Download the Project**
+- Download the project files from our GitHub repository (Either clone or download ZIP and extract it locally)
+2. **Install Python Dependencies**
+- Install Flask using pip: "pip install flask"
 
 ## How to build it
 Use the Arduino IDE to upload the project.ino file in your ESP32 board:
-1. Open project.ino in the Arduino IDE.
-2. Select your board type (e.g., "ESP32 Dev Module").
-3. Select the correct COM port.
-4. Click Upload to flash the ESP32. 
-5. You may need to modify the threshold value in project.ino depending on your pulse sensor's sensitivity.
+- Open project.ino in the Arduino IDE.
+- Select your board type (e.g., "ESP32 Dev Module").
+- Select the correct COM port.
+- Click Upload to flash the ESP32. 
+- (Optional) Adjust the threshold value in project.ino depending on your pulse sensor's sensitivity.
 
 ## How to run it
 Run the Backend Server
@@ -33,10 +33,10 @@ Run the Backend Server
 - Keep the terminal running while using the application.
 
 ## How to use it
-1. Place your finger between the LED and sensor on the ESP32.
-2. Do this in a dimly or darkly lit room for best results.
-3. Wait a few seconds for signal detection.
-4. Your current heart rate (BPM) will appear on the website in real time.
+- Place your finger between the LED and sensor on the ESP32.
+- Do this in a dimly or darkly lit room for best results.
+- Wait a few seconds for signal detection.
+- Your current heart rate (BPM) will appear on the website in real time.
 
 ## Troubleshooting
 ### Problem / Solution 
