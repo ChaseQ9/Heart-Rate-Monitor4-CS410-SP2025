@@ -1,4 +1,4 @@
-## Heart Rate Monitor - End-User Manual
+## ❤️ Heart Rate Monitor - End-User Manual
 Welcome! This guide will walk you through how to **set up, build, run and use** the Heart Rate Monitor project created for CS410-SP2025.
 
 ## What You Need
