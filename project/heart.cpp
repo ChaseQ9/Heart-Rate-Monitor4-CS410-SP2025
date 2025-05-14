@@ -47,10 +47,12 @@ void Heart::set_heart_rate(int rate) {
 }
 
 // Patrick M
-/** measure_for_seconds: Int -> Void
-*   Takes in a specified time (in seconds), and records heart rate during that time. Placedholder
-*   until we know the actual sensor logic
-*/
+/**
+ * measure_for_seconds: Int -> Void
+ * Measures heartrate for a given duration in seconds and outputs result
+ * to user the heartrate and if it is normal or not normal.
+ * @param seconds Duration of heartrate measurement
+ */
 void Heart::measure_for_seconds(int seconds) {
   cout << "Measuring heart rate for " << seconds << " seconds..." << endl;
   wait_x_seconds(seconds * 1000);
@@ -80,7 +82,13 @@ void Heart::wait_x_seconds(int milli_seconds) {
     }
   }
 }
-
+/**
+ * normal_heart_rate: Double -> Bool
+ * Takes in an average heartrate and returns if it is normal or not
+ * normal based on establishes normal range.
+ * @param average_heart_rate Avg heartrate to be analyzed
+ * @return Boolean value true if normal, false otherwise
+ */
 bool normal_heart_rate(double average_heart_rate) {
   // If betwen 60 and 100, will return True (Patrick McDonald)
   return (average_heart_rate >= 60 && average_heart_rate <= 100); 
