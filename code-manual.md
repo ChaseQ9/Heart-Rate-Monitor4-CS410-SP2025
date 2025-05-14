@@ -2,42 +2,43 @@
 Welcome! This guide will walk you through the **internal structure and functionality** of the Heart Rate Monitor project created for CS410-SP2025.
 
 ## Internal Structure
-Heart-Rate-Monitor4-CS410-SP2025/
-│
-├── .vscode/                            # VS Code workspace settings
-│   └── settings.json
-│
-├── project/
-│   ├── __pycache__/                    # Python bytecode cache
-│   ├── .vscode/                        # (Optional) Local project settings
-│   │   └── c_cpp_properties.json
-│   ├── settings.json                   # Project-level settings
-│
-│   ├── static_website/                # Frontend files served to the user
-│   │   ├── images/                    # UI images
-│   │   ├── videos/                    # Videos or demonstrations
-│   │   ├── clock.js                   # JavaScript for real-time clock/BPM updates
-│   │   ├── description.html           # Project overview webpage
-│   │   ├── description-style.css
-│   │   ├── future.html                # Future work page
-│   │   ├── future-style.css
-│   │   ├── index.html                 # Main dashboard (user landing page)
-│   │   ├── issue.html                 # Project limitations/issues
-│   │   ├── issue-style.css
-│   │   ├── style.css                  # General styles
-│   │   ├── team.html                  # Team introduction page
-│   │   ├── team-style.css
-│
-│   ├── Clock.cpp                      # Clock logic (C++)
-│   ├── Clock.h
-│   ├── heart.cpp                      # Heart rate calculation logic (C++)
-│   ├── heart.h
-│   ├── project.ino                    # Arduino sketch running on ESP32
-│   ├── server.py                      # Python Flask server for serial-to-web communication
-│
-├── code-manual.md                     # Developer documentation
-├── user-manual.md                     # End-user manual(setup, build, run and use)
-├── LICENSE                            # Open-source license info
+
+### Root Directory
+- `code-manual.md`: Developer documentation
+- `user-manual.md`: End-user manual (setup, build, run, and use)
+- `LICENSE`: Open-source license information
+
+### .vscode/
+- `settings.json`: VS Code workspace settings
+
+### project/
+- `settings.json`: Project-level configuration
+
+#### __pycache__/
+- Python bytecode cache (auto-generated)
+
+#### .vscode/
+- `c_cpp_properties.json`: Optional local C++ project settings
+
+#### static_website/
+- **Web Pages**:
+  - `index.html`: Main dashboard (landing page)
+  - `description.html`: Project overview
+  - `future.html`: Future work
+  - `issue.html`: Known issues
+  - `team.html`: Team introduction
+- **Scripts & Styles**:
+  - `clock.js`: JavaScript for real-time BPM updates
+  - `style.css`, `description-style.css`, `future-style.css`, `issue-style.css`, `team-style.css`: Page-specific stylesheets
+- **Assets**:
+  - `images/`: UI images
+  - `videos/`: Video demonstrations
+
+#### Source Code Files
+- `Clock.cpp`, `Clock.h`: Clock logic (C++)
+- `heart.cpp`, `heart.h`: Heartbeat detection and calculation logic (C++)
+- `project.ino`: Arduino sketch for ESP32
+- `server.py`: Python Flask server for reading from serial and serving data to frontend
 
 ## Functionality
 This section describes the major components of the project and their purpose, along with how they work together to deliver heart rate monitoring functionality.
