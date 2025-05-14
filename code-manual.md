@@ -66,8 +66,10 @@ This section describes the major components of the project and their purpose, al
 - Can be used for local testing without hardware.
 
 ### 5. `Clock.cpp` / `Clock.h`
-- 
-- 
+- Implements a software-based time scheduler.
+- Supports up to 10 measurement time blocks (`TimeBlock` structs).
+- Allows manual or simulated setting of the current time.
+- Useful for simulation/testing without a hardware RTC.
 
 ### How it all connects:
 1. The **ESP32** reads analog pulse data → processes it into BPM → sends it via **serial**.
