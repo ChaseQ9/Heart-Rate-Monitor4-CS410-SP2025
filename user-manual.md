@@ -42,16 +42,16 @@ Run the Backend Server
 ## Troubleshooting
 ### Problem / Solution 
 1. No heart rate detected
-=> Ensure finger placement is correct, check lighting and be patient.
-=> Make sure the wiring is done correctly and check if the pin used in the code is the same as the hardware.
-=> Make sure the LED is working (use a cellphone camera to check if the LED emits anything)
-3. Server doesn't start
-=> Make sure Flask is installed and use python/python3 server.py
-4. Website shows no data
-=> Confirm ESP32 is sending data; check wiring and serial connection.
-5. Inaccurate heartrates
-=> Make sure the baudrate set in the code is the same as the serial monitor
-=> Adjust the if statement in project.ino that checks for heartrates to skip any readings that occur too close 
+- Ensure finger placement is correct, check lighting and be patient.
+- Make sure the wiring is done correctly and check if the pin used in the code is the same as the hardware.
+- Make sure the LED is working (use a cellphone camera to check if the LED emits anything)
+2. Server doesn't start
+- Make sure Flask is installed and use python/python3 server.py
+3. Website shows no data
+- Confirm ESP32 is sending data; check wiring and serial connection.
+4. Inaccurate heartrates
+- Make sure the baudrate set in the code is the same as the serial monitor
+- Adjust the if statement in project.ino that checks for heartrates to skip any readings that occur too close 
 
 ## Notes
 - This project does not store any personal health data.
