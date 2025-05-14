@@ -1,3 +1,7 @@
+// Program: project.ino
+// This program is designed to measure heart rate using an ESP32 microcontroller and a pulse sensor.
+
+// Variable Declarations
 const int pulsePin = 34;  // GPIO34 for analog input, replace with whatever anolog pin you are using with your microboard
 const int buzzerPin = 22;// GPIO22 for the buzzer. Currently unused
 int threshold = 19;      // Threshold for fluctuations to determine a heartbeat, adjust according to your sensor

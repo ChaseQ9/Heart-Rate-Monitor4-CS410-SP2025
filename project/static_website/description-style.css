@@ -1,3 +1,7 @@
+/* 
+  Program: description-style.css
+  Description: CSS file for styling the description page of the static website.
+*/
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
@@ -45,6 +49,7 @@ body {
   color: #922b21;
 }
 
+/* BPM value */
 .bpm-value {
   font-size: 54px;
   font-weight: 700;
@@ -52,6 +57,7 @@ body {
   transition: transform 0.2s ease; /* Smooth scaling on hover */
 }
 
+/* Hover effect for BPM value */
 .bpm-value:hover {
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
@@ -70,6 +76,8 @@ body {
 }
 
 /* Pulse animation */
+/* This animation creates a pulsing effect for the heart icon */
+/* The heart will scale up and down to create a heartbeat effect */
 @keyframes pulse {
   0%   { transform: scale(1); }
   50%  { transform: scale(1.12); }

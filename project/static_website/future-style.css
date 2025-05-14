@@ -1,3 +1,8 @@
+/* 
+  Program: future-style.css
+  Description: CSS file for styling the future page of the static website.
+*/
+
 /* Import Google font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -72,6 +77,8 @@ body {
 }
 
 /* Pulse animation */
+/* This animation creates a pulsing effect for the heart icon */
+/* The heart scales up and down to create a heartbeat effect */
 @keyframes pulse {
   0%   { transform: scale(1); }
   50%  { transform: scale(1.12); }
@@ -102,7 +109,7 @@ body {
 /* Navigation bar list items */
 .nav-bar li {
   color: white;
-  font-style: italic; /* Italic text */
+  font-style: italic;
   list-style: none; /* No bullets */
   font-size: 2rem;
   padding: 5%; /* Padding for list items */
@@ -141,7 +148,7 @@ a:link {
   position: relative;
   padding-left: 3em;
   margin-bottom: 30px;
-  font-size: 1.6rem;                /* Bigger text */
+  font-size: 1.6rem;
   line-height: 2;
   color: #922b21;
   transition: font-size 0.3s ease, color 0.3s ease;

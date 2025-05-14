@@ -1,3 +1,6 @@
+# Program: server.py
+# Purpose: To create a Flask server that serves a static website and provides an API endpoint to retrieve heart rate data (BPM).
+
 from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 import random # Simulate random BPM data (Fake data for testing)
@@ -18,7 +21,6 @@ def serve_index():
 
 # Function name: get_bpm()
 # Purpose: To simulate the retrieval of heart rate data (BPM) from a device or database.
-
 @app.route('/bpm') # Serve the BPM data
 def get_bpm(test=False): 
     
@@ -32,10 +34,10 @@ def get_bpm(test=False):
     time.sleep(2)
     bpm = 0
     try: 
-        # attempt to try to read the data through the esp32 connection
+        # Attempt to try to read the data through the esp32 connection
         line = ser.readline().decode('utf-8', errors='ignore').strip()
         print(line)
-        # we are only interested in the numbers from the esp32 so strip out the ascii characters
+        # We are only interested in the numbers from the esp32 so strip out the ascii characters
         bpm = line.strip(string.ascii_letters)
     except KeyboardInterrupt:
         print("Exiting...")

@@ -82,6 +82,8 @@ void Heart::wait_x_seconds(int milli_seconds) {
     }
   }
 }
+
+// Patrick M
 /**
  * normal_heart_rate: Double -> Bool
  * Takes in an average heartrate and returns if it is normal or not
@@ -118,5 +120,3 @@ void storeDailyAvgHeartRates(Heart &heart) {
     cout << "Hour " << i + 1 << ": " << hourlyAverages[i] << endl;
   }
 }
-
-
