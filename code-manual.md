@@ -44,8 +44,9 @@ Welcome! This guide will walk you through the **internal structure and functiona
 This section describes the major components of the project and their purpose, along with how they work together to deliver heart rate monitoring functionality.
 
 ### 1. `project.ino` (ESP32 Arduino Sketch)
-- Collects heart rate signals from the Pulse Sensor.
-- Applies a threshold to detect beats per minute (BPM).
+- Collects analog readings from ESP32
+- Spikes in between the readings are interpereted as a singular heartbeat
+- Takes the average time between each reading in the last 10 seconds to find a BPM
 - Sends BPM data over the serial port to the host machine.
 
 ### 2. `server.py` (Python Flask Backend)
